@@ -7,12 +7,20 @@
     <script src="javascripts/powertools.js" type="text/javascript"></script>
 
 </head>
-<body>
+<body ng-controller="ItemsCtrl">
     Hej, dette er en test.
 
-
-    <ul ng-controller="ItemsCtrl">
-        <li ng-repeat="item in list">{{item.price}}</li>
+    <ul>
+        <li ng-repeat="item in list">
+            {{item}}
+        </li>
     </ul>
+
+    <form ng-submit="addItem()">
+        <input type="text" ng-model="itemName"  size="30"
+               placeholder="add new todo here">
+        <input class="btn-primary" type="submit" value="add">
+    </form>
+
 </body>
 </html>

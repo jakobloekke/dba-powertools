@@ -1,3 +1,9 @@
 function ItemsCtrl($scope) {
-    $scope.list = [];
+    $scope.list = ["audi", "iphone"];
+
+
+    $scope.addItem = function() {
+        $scope.list.push($scope.itemName);
+        $scope.itemName = '';
+    };
 }
