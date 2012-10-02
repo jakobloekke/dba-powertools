@@ -1,9 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
     <title></title>
+
+    <script src="javascripts/angular.js" type="text/javascript"></script>
+    <script src="javascripts/powertools.js" type="text/javascript"></script>
+
 </head>
 <body>
-    Hej, dette ere en test.
+    Hej, dette er en test.
+
+
+    <ul ng-controller="ItemsCtrl">
+        <li ng-repeat="item in list">{{item.price}}</li>
+    </ul>
 </body>
 </html>
