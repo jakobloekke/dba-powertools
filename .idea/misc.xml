@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Internationalization issues</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectResources">
+    <default-html-doctype>$APPLICATION_HOME_DIR$/lib/webide.jar!/resources/html5-schema/html5.rnc</default-html-doctype>
+  </component>
+  <component name="ProjectRootManager" version="2" />
+  <component name="RegexUtilComponent" text="&lt;tr class=&quot;dbaListing listing      &quot;&gt;&#10;    &#10;        &lt;td class=&quot;thumbnailContainer&quot;&gt;&#10;            &lt;div class=&quot;thumbnailContainerInner&quot;&gt;&#10;                &lt;a href=&quot;http://www.dba.dk/iphone-4s-64-gb-sort-ikke/id-86391280/&quot;&gt;&#10;                    &#10;            &lt;img class=&quot;thumbnail lazy srpDefaultThumbnail&quot; alt=&quot;iPhone 4S, 64 GB, sort, ikke sim-låst, Telefonen er fra d. 12/09-2012, ikke...&quot; data-original=&quot;http://i.dbastatic.dk/images/9/80//86391280_01102012154309_7366_9.jpg&quot; src=&quot;http://i.dbastatic.dk/images/9/80//86391280_01102012154309_7366_9.jpg&quot; style=&quot;display: block; &quot;&gt;&#10;                &lt;/a&gt;&#10;            &lt;/div&gt;&#10;        &lt;/td&gt;&#10;    &#10;    &lt;td class=&quot;mainContent&quot;&gt;&#10;        &#10;&lt;div class=&quot;icons&quot;&gt;&#10;  &#10;&lt;/div&gt;&#10;&#10;        &lt;a class=&quot;listingLink&quot; href=&quot;http://www.dba.dk/iphone-4s-64-gb-sort-ikke/id-86391280/&quot;&gt;&#10;            &#10;                &lt;span class=&quot;headline&quot;&gt;&lt;/span&gt; &#10;            &#10;            &lt;span class=&quot;text&quot;&gt;iPhone 4S, 64 GB, sort, ikke sim-låst, Telefonen er fra d. 12/09-2012, ikke...&lt;/span&gt;&#10;        &lt;/a&gt;&#10;        &#10;&lt;ul class=&quot;details&quot;&gt;&#10;    &#10;    &lt;li&gt;&#10;        &#10;&lt;a href=&quot;http://www.dba.dk/iphone-4s-64-gb-sort-ikke/id-86391280/&quot; class=&quot;visitedLink&quot;&gt;&lt;span class=&quot;icon visitedIcon&quot; title=&quot;Du har set annoncen&quot;&gt;&lt;/span&gt;&lt;/a&gt;&#10;    &lt;/li&gt;&#10;    &#10;    &lt;li&gt;&#10;        &#10;&lt;span&gt;&lt;a href=&quot;http://www.dba.dk/iphone-4s-64-gb-sort-ikke/id-86391280/kort/&quot; title=&quot;Sjælland - Vest - klik for at se kort&quot; onclick=&quot;Dba.showPopup(this.href, {width: 980, height: 730, name: 'googleMap', resizable: true});&#10;                            Dba.Analytics.trackClickEvent('SRP', 'show-map');;&#10;                         return false;&quot;&gt;&#10;    4200 Slagelse&lt;/a&gt;&lt;/span&gt;&#10;    &lt;/li&gt;&#10;    &#10;    &lt;li&gt;&#10;        &#10;    &lt;div class=&quot;nemIdBadge sellerInfoIcon toolTip&quot; rel=&quot;nemidToolTip&quot; tthandled=&quot;true&quot;&gt;&lt;/div&gt;&#10;    &lt;/li&gt;&#10;    &#10;    &lt;li&gt;&#10;        &#10;&lt;div class=&quot;paypalBadge sellerInfoIcon toolTip&quot; rel=&quot;paypalToolTip&quot; tthandled=&quot;true&quot;&gt;&lt;/div&gt;&#10;&#10;&#10;    &lt;/li&gt;&#10;    &#10;&lt;/ul&gt;&#10;&#10;&#10;    &lt;/td&gt;&#10;    &#10;&lt;td title=&quot;Dato&quot; style=&quot;text-align: left&quot; class=&quot;simple noWrap&quot;&gt;&#10;    I dag&#10;&lt;/td&gt;&#10;&#10;&lt;td title=&quot;Pris&quot; style=&quot;text-align: right&quot; class=&quot;simple noWrap&quot;&gt;&#10;    Kr. 4.500&#10;&lt;/td&gt;&#10;&#10;          &lt;/tr&gt;" flags="0" regex="\d" mode="0" />
+  <component name="SvnBranchConfigurationManager">
+    <option name="mySupportsUserInfoFilter" value="true" />
+  </component>
+</project>
+
