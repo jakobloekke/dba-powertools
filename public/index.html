@@ -1,26 +1,46 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="powertools">
 <head>
     <title></title>
 
+    <link rel="stylesheet" href="stylesheets/style.css">
+
     <script src="javascripts/angular.js" type="text/javascript"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular-resource.min.js"></script>
+    <script src="javascripts/dbaService.js" type="text/javascript"></script>
     <script src="javascripts/powertools.js" type="text/javascript"></script>
 
 </head>
 <body ng-controller="ItemsCtrl">
-    Hej, dette er en test.
 
-    <ul>
-        <li ng-repeat="item in list">
-            {{item}}
-        </li>
-    </ul>
+    <p ng-show="total() > 0" >You may be missing out on <strong>{{total()}},-</strong></p>
 
-    <form ng-submit="addItem()">
-        <input type="text" ng-model="itemName"  size="30"
-               placeholder="add new todo here">
-        <input class="btn-primary" type="submit" value="add">
-    </form>
+    <section>
+        <ul class="items">
+            <li ng-show="list.length > 0" class="column-names">
+                <div class="item-name">Item name</div>
+                <div class="item-median-price">Median price</div>
+            </li>
+            <li class="item ng-class: {'green': item.count >= 20, 'yellow': item.count < 20, 'red': item.count < 10}" ng-repeat="item in list">
+                <div class="item-name">{{item.name}}</div>
+                <div class="item-median-price">{{item.medianprice}},-</div>
+            </li>
+
+            <li>
+                <form ng-submit="addItem()">
+                    <input type="text" ng-model="itemName" size="30"
+                           placeholder="Type item name (eg. 'ipad')">
+                    <input class="btn" type="submit" value="add">
+                </form>
+            </li>
+        </ul>
+    </section>
+
+    <section ng-show="list.length > 0" class="legend">
+        <p><span class="green">Green</span> = 20+ items.</p>
+        <p><span class="yellow">Yellow</span> = 10 - 20 items.</p>
+        <p><span class="red">Red</span> = less than 10 items.</p>
+    </section>
 
 </body>
 </html>

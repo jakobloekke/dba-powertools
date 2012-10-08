@@ -31,7 +31,11 @@ app.get('/', function(req, res){
     res.sendfile("public/index.html");
 });
 
-app.get('/item/:keyword', function(req,res){
+app.get('/test', function(req, res){
+    res.send("test");
+});
+
+app.get('/api/item/:keyword', function(req,res){
     var keyword = req.params.keyword,
         url = 'http://www.dba.dk/soeg/?soeg=' + keyword;
 
