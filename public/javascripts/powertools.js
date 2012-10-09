@@ -1,14 +1,7 @@
-angular.module('powertools', ['itemservice']).
-    config(function($routeProvider) {
-        $routeProvider.
-            when('/', {controller:ItemsCtrl}).
-            otherwise({redirectTo:'/'});
-    });
+var powertools = angular.module('powertools',[]);
 
-function ItemsCtrl($scope, $http) {
+powertools.controller('ItemsCtrl', function ($scope, $http) {
     $scope.list = [];
-    $scope.method = 'GET';
-    $scope.url = '/api/item/';
 
     $scope.total = function() {
         var total = 0;
@@ -21,12 +14,8 @@ function ItemsCtrl($scope, $http) {
     };
 
     $scope.addItem = function() {
-        $scope.code = null;
-        $scope.response = null;
-
-        $http({method: $scope.method, url: $scope.url + $scope.itemName}).
+        $http({method: 'GET', url: '/api/item/' + $scope.itemName}).
             success(function(data, status) {
-                $scope.status = status;
                 $scope.data = data;
 
                 //Update list:
@@ -47,4 +36,8 @@ function ItemsCtrl($scope, $http) {
                 $scope.status = status;
             });
     };
-}
+
+    $scope.removeItem = function() {
+        $scope.list.splice(this.$index,1);
+    }
+});

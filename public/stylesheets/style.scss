@@ -46,6 +46,22 @@ $green: #7cd915;
   padding: .25em .75em;
   box-shadow: 1px 1px 1px #ccc;
   border-radius: 3px;
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .remove {
+    opacity: 0;
+  }
+
+  &:hover .remove {
+    opacity: 0.1;
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 
 .items {
