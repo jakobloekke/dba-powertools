@@ -18,6 +18,8 @@ powertools.controller('ItemsCtrl', function ($scope, $http) {
             success(function(data, status) {
                 $scope.data = data;
 
+                console.log(data);
+
                 //Update list:
                 $scope.list.push(
                     {
