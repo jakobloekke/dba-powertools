@@ -43,7 +43,7 @@ app.get('/api/item/:keyword', function(req,res){
         this.getHtml(url, function(err, $) {
 
             var data = {
-                    //listings: $('.listing'),
+                    listings: $('.listing'),
                     prices: []
                 };
 
