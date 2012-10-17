@@ -68,12 +68,11 @@ $green: #7cd915;
 
   li {
     display: -webkit-flex;
-    margin-bottom: .75em;
-    text-align: center;
+    margin: 0.5em 0;
 
     form {
       width: 100%;
-      margin: 1em;
+      margin: 1em 0;
 
       input[type=text] {
         outline: none;
@@ -86,13 +85,10 @@ $green: #7cd915;
     }
 
     &.column-names {
+      padding: .25em .75em;
       color: #a9a9a9;
       font-size: .75em;
       margin-bottom: 3px;
-
-      :first-child {
-        font-size: 1rem;
-      }
     }
 
     &.item {
@@ -100,7 +96,7 @@ $green: #7cd915;
     }
 
     .item-name {
-      -webkit-flex: 2;
+      -webkit-flex: 1;
       font-weight: bold;
     }
     .item-median-price {
@@ -123,4 +119,58 @@ $green: #7cd915;
       @include item;
     }
   }
+}
+
+/* --- Loader ---*/
+
+.loader {
+  display: block;
+  text-align: center;
+  & span {
+    @include item;
+
+    display: inline-block;
+    background-color: $green;
+    border-radius: 3px;
+    margin-right: 0.25em;
+    width: 10%;
+    -webkit-animation: loader 1s ease-in-out infinite;
+
+    &:nth-of-type(1) {
+      -webkit-animation-delay: 0;
+    }
+    &:nth-of-type(2) {
+      -webkit-animation-delay: 100ms;
+    }
+    &:nth-of-type(3) {
+      -webkit-animation-delay: 200ms
+    }
+    &:nth-of-type(4) {
+      -webkit-animation-delay: 300ms
+    }
+    &:nth-of-type(5) {
+      -webkit-animation-delay: 400ms
+    }
+    &:nth-of-type(6) {
+      -webkit-animation-delay: 500ms
+    }
+    &:nth-of-type(7) {
+      -webkit-animation-delay: 600ms
+    }
+    &:nth-of-type(8) {
+      -webkit-animation-delay: 700ms
+    }
+    &:nth-of-type(9) {
+      -webkit-animation-delay: 800ms
+    }
+    &:nth-of-type(10) {
+      -webkit-animation-delay: 900ms
+    }
+  }
+
+}
+
+@-webkit-keyframes loader {
+  0% {-webkit-transform: scale(1, 1)}
+  50% {-webkit-transform: scale(0, 0); opacity: 0.5}
 }

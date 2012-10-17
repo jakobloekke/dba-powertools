@@ -34,11 +34,10 @@ li {
 /* --- list layout --- */
 .items li {
   display: -webkit-flex;
-  margin-bottom: .75em;
-  text-align: center; }
+  margin: 0.5em 0; }
   .items li form {
     width: 100%;
-    margin: 1em; }
+    margin: 1em 0; }
     .items li form input[type=text] {
       outline: none;
       font-size: 1em;
@@ -47,11 +46,10 @@ li {
       border-bottom: 1px dotted gray;
       background: none; }
   .items li.column-names {
+    padding: .25em .75em;
     color: #a9a9a9;
     font-size: .75em;
     margin-bottom: 3px; }
-    .items li.column-names :first-child {
-      font-size: 1rem; }
   .items li.item {
     padding: .25em .75em;
     box-shadow: 1px 1px 1px #ccc;
@@ -66,7 +64,7 @@ li {
       .items li.item:hover .remove:hover {
         opacity: 1; }
   .items li .item-name {
-    -webkit-flex: 2;
+    -webkit-flex: 1;
     font-weight: bold; }
   .items li .item-median-price {
     -webkit-flex: 1; }
@@ -89,3 +87,55 @@ li {
     opacity: 0.1; }
     .legend p span:hover .remove:hover {
       opacity: 1; }
+
+/* --- Loader ---*/
+.loader {
+  display: block;
+  text-align: center; }
+  .loader span {
+    padding: .25em .75em;
+    box-shadow: 1px 1px 1px #ccc;
+    border-radius: 3px;
+    display: inline-block;
+    background-color: #7cd915;
+    border-radius: 3px;
+    margin-right: 0.25em;
+    width: 10%;
+    -webkit-animation: loader 1s ease-in-out infinite; }
+    .loader span a {
+      color: black;
+      text-decoration: none; }
+    .loader span .remove {
+      opacity: 0; }
+    .loader span:hover .remove {
+      opacity: 0.1; }
+      .loader span:hover .remove:hover {
+        opacity: 1; }
+    .loader span:nth-of-type(1) {
+      -webkit-animation-delay: 0; }
+    .loader span:nth-of-type(2) {
+      -webkit-animation-delay: 100ms; }
+    .loader span:nth-of-type(3) {
+      -webkit-animation-delay: 200ms; }
+    .loader span:nth-of-type(4) {
+      -webkit-animation-delay: 300ms; }
+    .loader span:nth-of-type(5) {
+      -webkit-animation-delay: 400ms; }
+    .loader span:nth-of-type(6) {
+      -webkit-animation-delay: 500ms; }
+    .loader span:nth-of-type(7) {
+      -webkit-animation-delay: 600ms; }
+    .loader span:nth-of-type(8) {
+      -webkit-animation-delay: 700ms; }
+    .loader span:nth-of-type(9) {
+      -webkit-animation-delay: 800ms; }
+    .loader span:nth-of-type(10) {
+      -webkit-animation-delay: 900ms; }
+
+@-webkit-keyframes loader {
+  0% {
+    -webkit-transform: scale(1, 1); }
+
+  50% {
+    -webkit-transform: scale(0, 0);
+    opacity: 0.5; } }
