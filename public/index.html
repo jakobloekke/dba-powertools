@@ -21,14 +21,21 @@
                 <div class="item-median-price">Median price</div>
             </li>
 
-            <li class="item ng-class: {'green': item.count >= 20, 'yellow': item.count < 20, 'red': item.count < 10}" ng-repeat="item in list">
+            <li ng-show="item.name" class="item ng-class: {'green': item.prices.length >= 20, 'yellow': item.prices.length < 20, 'red': item.prices.length < 10}" ng-repeat="item in list">
                 <a class="remove" ng-click="removeItem()">x</a>
                 <div class="item-name">
                     <a target="_blank" href="http://www.dba.dk/soeg/?soeg={{item.name}}">
                         {{item.name}}
                     </a>
                 </div>
-                <div class="item-median-price">{{item.medianprice | currency:"kr. "}}</div>
+                <div class="item-median-price">{{item.median_price | currency:"kr. "}}</div>
+            </li>
+
+            <li class="loader" ng-show="loading()" >
+                Loading ...
+            </li>
+            <li class="loader">
+                Loading ...
             </li>
 
             <li>

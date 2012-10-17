@@ -31,11 +31,7 @@ app.get('/', function(req, res){
     res.sendfile("public/index.html");
 });
 
-app.get('/test', function(req, res){
-    res.send("test");
-});
-
-app.get('/api/item/:keyword', function(req,res){
+app.get('/api/items/:keyword', function(req,res){
     var keyword = req.params.keyword,
         url = 'http://www.dba.dk/soeg/?soeg=' + keyword;
 
@@ -43,8 +39,9 @@ app.get('/api/item/:keyword', function(req,res){
         this.getHtml(url, function(err, $) {
 
             var data = {
-                    listings: $('.listing'),
-                    prices: []
+                    name: keyword,
+                    prices: [],
+                    listings: $('.listing')
                 };
 
             // Extract all prices from search results
