@@ -4,6 +4,7 @@
     <title></title>
 
     <link rel="stylesheet" href="stylesheets/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Finger+Paint' rel='stylesheet' type='text/css'>
 
     <script src="javascripts/angular.js" type="text/javascript"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular-resource.min.js"></script>
@@ -12,52 +13,57 @@
 </head>
 <body ng-app="powertools" ng-controller="ItemsCtrl">
 
-    <p ng-show="total() > 0"><strong>{{total() | currency:"Kr. "}} 4 U!</strong></p>
+<section class="controls">
+    <form ng-submit="addItem()">
+        <input type="text" ng-model="itemName" size="30" placeholder="Type item name (eg. 'ipad')">
+        <button ng-disabled="!itemName" type="submit">Add</button>
+    </form>
 
-    <section>
-        <ul class="items">
-            <li ng-show="list.length > 0" class="column-names">
-                <div class="item-name">Item name</div>
-                <div class="item-median-price">Median price</div>
-            </li>
+    <p class="nice-text" ng-show="total() > 0">
+        U got <strong>{{total() | currency:"Kr. "}}</strong> worth of stuff!
+    </p>
+</section>
 
-            <li ng-show="item.name" class="item ng-class: {'green': item.prices.length >= 20, 'yellow': item.prices.length < 20, 'red': item.prices.length < 10}" ng-repeat="item in list">
-                <div class="item-name">
-                    <a target="_blank" href="http://www.dba.dk/soeg/?soeg={{item.name}}">
-                        {{item.name}}
-                    </a>
-                </div>
-                <div class="item-median-price">{{item.median_price | currency:"kr. "}}</div>
+    <table class="items">
+        <tr class="column-names" ng-show="list.length > 0">
+            <th></th>
+            <th></th>
+            <th><strong>Price</strong></th>
+            <th>Range</th>
+        </tr>
 
-                <a class="remove" ng-click="removeItem()">x</a>
-            </li>
+        <tr ng-show="item.name" class="item ng-class: {'good': item.quality < 3, 'uncertain': item.quality >= 3, 'bad': item.quality >= 8}" ng-repeat="item in list">
+            <td class="remove"><a ng-click="removeItem()">x</a></td>
+            <td class="item_name">
+                <a target="_blank" href="http://www.dba.dk/soeg/?soeg={{item.name}}">
+                    {{item.name}} ({{item.prices.length}})
+                </a>
+            </td>
+            <td><strong>{{item.median_price | currency:"kr. "}}</strong></td>
+            <td>{{item.lowest_price | currency:"kr. "}} - {{item.highest_price | currency:"kr. "}}</td>
+        </tr>
 
-            <li class="loader" ng-show="loading()">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </li>
+    </table>
 
-            <li>
-                <form ng-submit="addItem()">
-                    <input type="text" ng-model="itemName" size="30" placeholder="Type item name (eg. 'ipad')">
-                    <button ng-disabled="!itemName" type="submit">Add</button>
-                </form>
-            </li>
-        </ul>
-    </section>
+    <div class="loader" ng-show="loading()">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+
 
     <section ng-show="list.length > 0" class="legend">
-        <p><span class="green">Green</span> = 20+ items.</p>
-        <p><span class="yellow">Yellow</span> = 10 - 20 items.</p>
-        <p><span class="red">Red</span> = less than 10 items.</p>
+        <p class="nice-text">Colors = result quality*</p>
+        <span class="good">Good</span>
+        <span class="uncertain">Uncertain</span>
+        <span class="bad">Bad</span>
+        <p class="silent">*using our very own top-secret, proprietary "Classifieds Price Consitinator" algorithm!</p>
     </section>
 
 </body>

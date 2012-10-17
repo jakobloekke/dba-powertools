@@ -3,13 +3,14 @@
   box-sizing: border-box; }
 
 html {
-  box-shadow: inset 0 0 10em #eee5d0;
-  height: 100%; }
+  min-height: 100%;
+  box-shadow: inset 0 0 10em #eee5d0; }
 
 body {
   font-family: arial;
   background-color: #f8f8ff;
-  padding: 2em; }
+  padding: 2em;
+  margin: 0; }
 
 section {
   margin: 3em 0; }
@@ -21,72 +22,102 @@ ul {
 li {
   list-style-type: none; }
 
+.nice-text {
+  font-family: 'Finger Paint', cursive;
+  font-size: 24px;
+  color: #181818; }
+  .nice-text strong {
+    display: block;
+    color: black;
+    font-size: 250%;
+    -webkit-transform: rotate(-2deg); }
+
 /* --- colors --- */
-.green {
-  background-color: #7cd915; }
-
-.yellow {
-  background-color: #f2e937; }
-
-.red {
-  background-color: #e26529; }
-
 /* --- list layout --- */
-.items li {
-  display: -webkit-flex;
-  margin: 0.5em 0; }
-  .items li form {
-    width: 100%;
-    margin: 1em 0; }
-    .items li form input[type=text] {
-      outline: none;
-      font-size: 1em;
-      font-family: consolas;
-      border: none;
-      border-bottom: 1px dotted gray;
-      background: none; }
-  .items li.column-names {
-    padding: .25em .75em;
+/* --- Table layout --- */
+.items {
+  width: 100%;
+  border-collapse: collapse; }
+  .items .column-names {
     color: #a9a9a9;
     font-size: .75em;
     margin-bottom: 3px; }
-  .items li.item {
+    .items .column-names th {
+      padding-bottom: 1em;
+      text-align: left; }
+
+.item:hover {
+  background-color: rgba(200, 200, 0, 0.03); }
+.item.good .item_name {
+  background-color: #7cd915; }
+.item.uncertain .item_name {
+  background-color: #f2e937; }
+.item.bad .item_name {
+  background-color: #e26529; }
+.item td {
+  border-radius: 0;
+  vertical-align: middle;
+  padding-top: 0.25em;
+  color: gray; }
+  .item td.item_name {
+    padding: .25em .75em;
+    box-shadow: 1px 1px 1px #ccc;
+    border-radius: 3px;
+    display: inline-block;
+    margin: 0.5em 0;
+    color: black;
+    font-weight: bold; }
+    .item td.item_name a {
+      text-decoration: none;
+      color: black; }
+  .item td.remove {
+    padding: 0 0.75em;
+    text-align: left; }
+    .item td.remove a {
+      display: block;
+      color: black;
+      text-decoration: none;
+      opacity: 0.1; }
+      .item td.remove a:hover {
+        opacity: 1; }
+
+/* --- Controls --- */
+.controls {
+  margin-top: 2em;
+  text-align: center; }
+
+/* --- Form --- */
+form {
+  width: 100%;
+  margin: 1em 0; }
+  form input[type=text] {
+    outline: none;
+    font-size: 1em;
+    font-family: consolas;
+    border: none;
+    border-bottom: 1px dotted gray;
+    background: none; }
+
+/* --- legend layout --- */
+.legend {
+  margin: 1em;
+  text-align: left;
+  border-top: 1px dotted gray; }
+  .legend * {
+    color: #333;
+    font-size: 85%; }
+  .legend .silent {
+    font-size: 75%; }
+  .legend span {
     padding: .25em .75em;
     box-shadow: 1px 1px 1px #ccc;
     border-radius: 3px; }
-    .items li.item a {
-      color: black;
-      text-decoration: none; }
-    .items li.item .remove {
-      opacity: 0; }
-    .items li.item:hover .remove {
-      opacity: 0.1; }
-      .items li.item:hover .remove:hover {
-        opacity: 1; }
-  .items li .item-name {
-    -webkit-flex: 1;
-    font-weight: bold; }
-  .items li .item-median-price {
-    -webkit-flex: 1; }
-  .items li .item-average-price {
-    -webkit-flex: 1; }
-  .items li .item-count {
-    -webkit-flex: 1; }
-
-/* --- legend layout --- */
-.legend p span {
-  padding: .25em .75em;
-  box-shadow: 1px 1px 1px #ccc;
-  border-radius: 3px; }
-  .legend p span a {
-    color: black;
-    text-decoration: none; }
-  .legend p span .remove {
-    opacity: 0; }
-  .legend p span:hover .remove {
-    opacity: 0.1; }
-    .legend p span:hover .remove:hover {
-      opacity: 1; }
+    .legend span.good {
+      background-color: #7cd915; }
+    .legend span.uncertain {
+      background-color: #f2e937; }
+    .legend span.bad {
+      background-color: #e26529; }
 
 /* --- Loader ---*/
 .loader {
@@ -102,15 +133,6 @@ li {
     margin-right: 0.25em;
     width: 10%;
     -webkit-animation: loader 1s ease-in-out infinite; }
-    .loader span a {
-      color: black;
-      text-decoration: none; }
-    .loader span .remove {
-      opacity: 0; }
-    .loader span:hover .remove {
-      opacity: 0.1; }
-      .loader span:hover .remove:hover {
-        opacity: 1; }
     .loader span:nth-of-type(1) {
       -webkit-animation-delay: 0; }
     .loader span:nth-of-type(2) {
